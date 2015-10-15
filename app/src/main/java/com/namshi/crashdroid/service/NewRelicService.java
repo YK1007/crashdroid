@@ -25,4 +25,9 @@ public class NewRelicService extends CrashService{
     int getId() {
         return ID;
     }
+
+    @Override
+    boolean isEnabled() {
+        return true;
+    }
 }

@@ -25,4 +25,9 @@ public class GoogleAnalyticsService extends CrashService{
     int getId() {
         return ID;
     }
+
+    @Override
+    boolean isEnabled() {
+        return false;
+    }
 }

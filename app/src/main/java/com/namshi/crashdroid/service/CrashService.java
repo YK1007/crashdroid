@@ -25,4 +25,11 @@ public abstract class CrashService {
      * @return
      */
     abstract int getId();
+
+    /**
+     * Represents service state.
+     * <br>true - service enabled, false - otherwise.
+     * @return
+     */
+    abstract boolean isEnabled();
 }

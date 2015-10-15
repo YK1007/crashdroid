@@ -25,4 +25,9 @@ public class HockeyAppService extends CrashService{
     int getId() {
         return ID;
     }
+
+    @Override
+    boolean isEnabled() {
+        return true;
+    }
 }
