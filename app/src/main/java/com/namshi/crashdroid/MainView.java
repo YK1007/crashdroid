@@ -9,4 +9,6 @@ import com.namshi.crashdroid.service.CrashService;
  */
 public interface MainView {
     void setupServices(SparseArray<CrashService> services);
+    void showProgress();
+    void hideProgress();
 }

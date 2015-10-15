@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.CompoundButton.OnCheckedChangeListener;
+import android.widget.FrameLayout;
 import android.widget.LinearLayout;
 
 import com.namshi.crashdroid.service.CrashService;
@@ -20,6 +21,8 @@ public class MainActivity extends AppCompatActivity implements MainView, OnCheck
 
     @Bind(R.id.servicesLayout)
     LinearLayout servicesLayout;
+    @Bind(R.id.progressBarFrameLayout)
+    FrameLayout progressBarLayout;
 
     Activity deadActivity;
     MainPresenter presenter;
@@ -42,6 +45,16 @@ public class MainActivity extends AppCompatActivity implements MainView, OnCheck
     @Override
     public void setupServices(SparseArray<CrashService> services) {
         createServicesCheckboxes(services);
+    }
+
+    @Override
+    public void showProgress() {
+        progressBarLayout.setVisibility(View.VISIBLE);
+    }
+
+    @Override
+    public void hideProgress() {
+        progressBarLayout.setVisibility(View.GONE);
     }
 
     private void createServicesCheckboxes(SparseArray<CrashService> services) {
