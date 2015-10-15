@@ -6,51 +6,41 @@ import android.util.SparseArray;
 import android.widget.CheckBox;
 import android.widget.LinearLayout;
 
-import com.namshi.crashdroid.service.AppSeeService;
 import com.namshi.crashdroid.service.CrashService;
-import com.namshi.crashdroid.service.CrashlyticsService;
-import com.namshi.crashdroid.service.CrittercismService;
-import com.namshi.crashdroid.service.GoogleAnalyticsService;
-import com.namshi.crashdroid.service.HockeyAppService;
-import com.namshi.crashdroid.service.NewRelicService;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements MainView {
 
     @Bind(R.id.servicesLayout)
     LinearLayout servicesLayout;
 
-    private SparseArray<CrashService> registeredServices;
+    MainPresenter presenter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
-
-        setupServices();
+        presenter = new MainPresenterImpl(this, this);
+        presenter.onCreate();
     }
 
-    private void setupServices() {
-        registerServices();
-        createServicesCheckboxes();
+    @Override
+    protected void onResume() {
+        super.onResume();
+        presenter.onResume();
     }
 
-    private void registerServices() {
-        registeredServices = new SparseArray<>(6);
-        registeredServices.put(0, new HockeyAppService(this));
-        registeredServices.put(1, new NewRelicService(this));
-        registeredServices.put(2, new CrittercismService(this));
-        registeredServices.put(3, new AppSeeService(this));
-        registeredServices.put(4, new CrashlyticsService(this));
-        registeredServices.put(5, new GoogleAnalyticsService(this));
+    @Override
+    public void setupServices(SparseArray<CrashService> services) {
+        createServicesCheckboxes(services);
     }
 
-    private void createServicesCheckboxes() {
-        for(int i = 0, size = registeredServices.size(); i < size; i++) {
-            CrashService s = registeredServices.get(i);
+    private void createServicesCheckboxes(SparseArray<CrashService> services) {
+        for(int i = 0, size = services.size(); i < size; i++) {
+            CrashService s = services.get(i);
             CheckBox cb = createCheckboxForService(s);
             servicesLayout.addView(cb);
         }
