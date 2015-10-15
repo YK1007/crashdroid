@@ -34,4 +34,9 @@ public class MainPresenterImpl implements MainPresenter {
     public void onServiceChecked(int checkedServiceId, boolean isChecked) {
         crashServicesInteractor.updateServiceState(checkedServiceId, isChecked);
     }
+
+    @Override
+    public void throwOutOfMemory() {
+        throw new OutOfMemoryError("Test OutOfMemory error");
+    }
 }

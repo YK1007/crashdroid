@@ -3,6 +3,7 @@ package com.namshi.crashdroid;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.SparseArray;
+import android.view.View;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.CompoundButton.OnCheckedChangeListener;
@@ -12,6 +13,7 @@ import com.namshi.crashdroid.service.CrashService;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
+import butterknife.OnClick;
 
 public class MainActivity extends AppCompatActivity implements MainView, OnCheckedChangeListener {
 
@@ -62,4 +64,10 @@ public class MainActivity extends AppCompatActivity implements MainView, OnCheck
     public void onCheckedChanged(CompoundButton compoundButton, boolean checked) {
         presenter.onServiceChecked((int) compoundButton.getTag(), checked);
     }
+
+    @OnClick(R.id.buttonOutOfMemory)
+    public void onOutOfMemoryClick(View v) {
+        presenter.throwOutOfMemory();
+    }
+
 }

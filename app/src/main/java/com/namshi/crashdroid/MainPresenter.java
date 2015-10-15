@@ -7,4 +7,5 @@ public interface MainPresenter {
     void onCreate();
     void onResume();
     void onServiceChecked(int checkedServiceId, boolean isChecked);
+    void throwOutOfMemory();
 }
