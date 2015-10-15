@@ -5,20 +5,20 @@ import android.content.Context;
 import com.namshi.crashdroid.R;
 
 /**
- * Crittercism crash service.
+ * AppSee crash service.
  * Created by vgaidarji on 10/15/15.
  */
-public class CrittercismService extends CrashService {
+public class AppSeeService extends CrashService{
 
-    public static final int ID = 3;
+    public static final int ID = 4;
 
-    public CrittercismService(Context context) {
+    public AppSeeService(Context context) {
         super(context);
     }
 
     @Override
     String getName() {
-        return context.getString(R.string.crittercism);
+        return context.getString(R.string.app_see);
     }
 
     @Override
