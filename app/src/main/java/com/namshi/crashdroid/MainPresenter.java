@@ -6,4 +6,5 @@ package com.namshi.crashdroid;
 public interface MainPresenter {
     void onCreate();
     void onResume();
+    void onServiceChecked(int checkedServiceId);
 }

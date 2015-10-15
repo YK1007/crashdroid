@@ -24,4 +24,9 @@ public class MainPresenterImpl implements MainPresenter {
     public void onResume() {
 
     }
+
+    @Override
+    public void onServiceChecked(int checkedServiceId) {
+
+    }
 }

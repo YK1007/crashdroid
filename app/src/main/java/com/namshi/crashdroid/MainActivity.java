@@ -4,6 +4,8 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.SparseArray;
 import android.widget.CheckBox;
+import android.widget.CompoundButton;
+import android.widget.CompoundButton.OnCheckedChangeListener;
 import android.widget.LinearLayout;
 
 import com.namshi.crashdroid.service.CrashService;
@@ -11,7 +13,7 @@ import com.namshi.crashdroid.service.CrashService;
 import butterknife.Bind;
 import butterknife.ButterKnife;
 
-public class MainActivity extends AppCompatActivity implements MainView {
+public class MainActivity extends AppCompatActivity implements MainView, OnCheckedChangeListener {
 
     @Bind(R.id.servicesLayout)
     LinearLayout servicesLayout;
@@ -51,6 +53,13 @@ public class MainActivity extends AppCompatActivity implements MainView {
         cb.setText(service.getName());
         cb.setTag(service.getId());
         cb.setEnabled(service.isEnabled());
+        cb.setChecked(service.isEnabled());
+        cb.setOnCheckedChangeListener(this);
         return cb;
+    }
+
+    @Override
+    public void onCheckedChanged(CompoundButton compoundButton, boolean checked) {
+        presenter.onServiceChecked((int) compoundButton.getTag());
     }
 }
