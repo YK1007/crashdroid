@@ -50,6 +50,7 @@ public class MainActivity extends AppCompatActivity implements MainView {
         CheckBox cb = new CheckBox(this);
         cb.setText(service.getName());
         cb.setTag(service.getId());
+        cb.setEnabled(service.isEnabled());
         return cb;
     }
 }
