@@ -5,4 +5,5 @@
     <string name="new_relic">NewRelic</string>
     <string name="crittercism">Crittercism</string>
     <string name="app_see">AppSee</string>
+    <string name="crashlytics">Crashlytics</string>
 </resources>
