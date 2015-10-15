@@ -60,6 +60,6 @@ public class MainActivity extends AppCompatActivity implements MainView, OnCheck
 
     @Override
     public void onCheckedChanged(CompoundButton compoundButton, boolean checked) {
-        presenter.onServiceChecked((int) compoundButton.getTag());
+        presenter.onServiceChecked((int) compoundButton.getTag(), checked);
     }
 }

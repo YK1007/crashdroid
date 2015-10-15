@@ -12,7 +12,7 @@ public class MainPresenterImpl implements MainPresenter {
 
     public MainPresenterImpl(MainView mainView, Context context) {
         this.mainView = mainView;
-        crashServicesInteractor = new CrashServicesInteractor(context);
+        crashServicesInteractor = new CrashServicesInteractorImpl(context);
     }
 
     @Override
@@ -26,7 +26,7 @@ public class MainPresenterImpl implements MainPresenter {
     }
 
     @Override
-    public void onServiceChecked(int checkedServiceId) {
-
+    public void onServiceChecked(int checkedServiceId, boolean isChecked) {
+        crashServicesInteractor.updateServiceState(checkedServiceId, isChecked);
     }
 }
