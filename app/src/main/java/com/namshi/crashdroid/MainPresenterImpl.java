@@ -50,7 +50,13 @@ public class MainPresenterImpl implements MainPresenter {
 
     @Override
     public void throwStackOverflowException() {
-        recursiveMethod();
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                // stack size in Thread = 1036KB
+                recursiveMethod();
+            }
+        }).start();
     }
 
     /**
