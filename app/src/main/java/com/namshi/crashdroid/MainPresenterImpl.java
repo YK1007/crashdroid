@@ -47,4 +47,16 @@ public class MainPresenterImpl implements MainPresenter {
     public void throwBadTokenException() {
         throw new BadTokenException("Test BadTokenException");
     }
+
+    @Override
+    public void throwStackOverflowException() {
+        recursiveMethod();
+    }
+
+    /**
+     * No exit point from recursion - StackOverflowException should be thrown.
+     */
+    private void recursiveMethod() {
+        recursiveMethod();
+    }
 }

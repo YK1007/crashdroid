@@ -76,4 +76,9 @@ public class MainActivity extends AppCompatActivity implements MainView, OnCheck
     public void onBadTokenExceptionClick(View v) {
         presenter.throwBadTokenException();
     }
+
+    @OnClick(R.id.buttonStackOverflowError)
+    public void onStackOverflowExceptionClick(View v) {
+        presenter.throwStackOverflowException();
+    }
 }
