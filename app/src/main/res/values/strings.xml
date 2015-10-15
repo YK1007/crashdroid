@@ -6,4 +6,5 @@
     <string name="crittercism">Crittercism</string>
     <string name="app_see">AppSee</string>
     <string name="crashlytics">Crashlytics</string>
+    <string name="google_analytics">Google Analytics</string>
 </resources>
