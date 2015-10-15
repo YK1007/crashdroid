@@ -3,4 +3,5 @@
     <string name="select_services">Select services:</string>
     <string name="hockey_app">HockeyApp</string>
     <string name="new_relic">NewRelic</string>
+    <string name="crittercism">Crittercism</string>
 </resources>
