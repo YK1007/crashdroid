@@ -17,17 +17,17 @@ public class AppSeeService extends CrashService{
     }
 
     @Override
-    String getName() {
+    public String getName() {
         return context.getString(R.string.app_see);
     }
 
     @Override
-    int getId() {
+    public int getId() {
         return ID;
     }
 
     @Override
-    boolean isEnabled() {
+    public boolean isEnabled() {
         return false;
     }
 }

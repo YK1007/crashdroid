@@ -18,18 +18,18 @@ public abstract class CrashService {
      * Service name.
      * @return
      */
-    abstract String getName();
+    public abstract String getName();
 
     /**
      * Service id (must be unique).
      * @return
      */
-    abstract int getId();
+    public abstract int getId();
 
     /**
      * Represents service state.
      * <br>true - service enabled, false - otherwise.
      * @return
      */
-    abstract boolean isEnabled();
+    public abstract boolean isEnabled();
 }

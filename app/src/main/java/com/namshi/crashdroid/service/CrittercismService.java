@@ -17,17 +17,17 @@ public class CrittercismService extends CrashService {
     }
 
     @Override
-    String getName() {
+    public String getName() {
         return context.getString(R.string.crittercism);
     }
 
     @Override
-    int getId() {
+    public int getId() {
         return ID;
     }
 
     @Override
-    boolean isEnabled() {
+    public boolean isEnabled() {
         return true;
     }
 }
