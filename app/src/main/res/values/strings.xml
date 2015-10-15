@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">Crashdroid</string>
     <string name="select_services">Select services:</string>
+    <string name="hockey_app">HockeyApp</string>
 </resources>
