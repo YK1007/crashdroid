@@ -30,4 +30,14 @@ public class GoogleAnalyticsService extends CrashService{
     public boolean isEnabled() {
         return false;
     }
+
+    @Override
+    public void enable() {
+
+    }
+
+    @Override
+    public void disable() {
+
+    }
 }

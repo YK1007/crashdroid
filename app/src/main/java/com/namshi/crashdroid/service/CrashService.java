@@ -32,4 +32,14 @@ public abstract class CrashService {
      * @return
      */
     public abstract boolean isEnabled();
+
+    /**
+     * Enable service.
+     */
+    public abstract void enable();
+
+    /**
+     * Disable service.
+     */
+    public abstract void disable();
 }

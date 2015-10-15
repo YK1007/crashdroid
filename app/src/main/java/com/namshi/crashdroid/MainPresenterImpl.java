@@ -1,6 +1,9 @@
 package com.namshi.crashdroid;
 
 import android.content.Context;
+import android.util.SparseArray;
+
+import com.namshi.crashdroid.service.CrashService;
 
 /**
  * Created by vgaidarji on 10/15/15.
@@ -17,7 +20,9 @@ public class MainPresenterImpl implements MainPresenter {
 
     @Override
     public void onCreate() {
-        mainView.setupServices(crashServicesInteractor.registerServices());
+        SparseArray<CrashService> services = crashServicesInteractor.createServices();
+        crashServicesInteractor.startServices();
+        mainView.setupServices(services);
     }
 
     @Override

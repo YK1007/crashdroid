@@ -30,4 +30,14 @@ public class HockeyAppService extends CrashService{
     public boolean isEnabled() {
         return true;
     }
+
+    @Override
+    public void enable() {
+
+    }
+
+    @Override
+    public void disable() {
+
+    }
 }

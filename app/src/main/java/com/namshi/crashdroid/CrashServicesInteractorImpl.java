@@ -23,7 +23,10 @@ public class CrashServicesInteractorImpl implements CrashServicesInteractor{
     }
 
     @Override
-    public SparseArray<CrashService> registerServices() {
+    public SparseArray<CrashService> createServices() {
+        if(registeredServices != null) {
+            return registeredServices;
+        }
         registeredServices = new SparseArray<>(6);
         registeredServices.put(0, new HockeyAppService(context));
         registeredServices.put(1, new NewRelicService(context));
@@ -32,6 +35,20 @@ public class CrashServicesInteractorImpl implements CrashServicesInteractor{
         registeredServices.put(4, new CrashlyticsService(context));
         registeredServices.put(5, new GoogleAnalyticsService(context));
         return registeredServices;
+    }
+
+    @Override
+    public void startServices() {
+        if(registeredServices == null) {
+            return;
+        }
+
+        for(int i = 0, size = registeredServices.size(); i < size; i++) {
+            CrashService service = registeredServices.get(i);
+            if(service.isEnabled()) {
+                service.enable();
+            }
+        }
     }
 
     @Override
