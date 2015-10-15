@@ -7,5 +7,6 @@
     <string name="app_see">AppSee</string>
     <string name="crashlytics">Crashlytics</string>
     <string name="google_analytics">Google Analytics</string>
-    <string name="raise_out_of_memory">Raise "Out Of Memory"</string>
+    <string name="throw_out_of_memory">Throw "Out Of Memory"</string>
+    <string name="throw_bad_token_exception">Throw "Bad Token Exception"</string>
 </resources>

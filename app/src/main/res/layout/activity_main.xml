@@ -29,7 +29,13 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/raise_out_of_memory"
+        android:text="@string/throw_out_of_memory"
         android:id="@+id/buttonOutOfMemory"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/throw_bad_token_exception"
+        android:id="@+id/buttonBadTokenException"/>
 
 </LinearLayout>

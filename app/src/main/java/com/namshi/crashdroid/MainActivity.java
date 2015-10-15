@@ -1,5 +1,6 @@
 package com.namshi.crashdroid;
 
+import android.app.Activity;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.SparseArray;
@@ -20,6 +21,7 @@ public class MainActivity extends AppCompatActivity implements MainView, OnCheck
     @Bind(R.id.servicesLayout)
     LinearLayout servicesLayout;
 
+    Activity deadActivity;
     MainPresenter presenter;
 
     @Override
@@ -70,4 +72,8 @@ public class MainActivity extends AppCompatActivity implements MainView, OnCheck
         presenter.throwOutOfMemory();
     }
 
+    @OnClick(R.id.buttonBadTokenException)
+    public void onBadTokenExceptionClick(View v) {
+        presenter.throwBadTokenException();
+    }
 }

@@ -2,6 +2,7 @@ package com.namshi.crashdroid;
 
 import android.content.Context;
 import android.util.SparseArray;
+import android.view.WindowManager.BadTokenException;
 
 import com.namshi.crashdroid.service.CrashService;
 
@@ -11,10 +12,12 @@ import com.namshi.crashdroid.service.CrashService;
 public class MainPresenterImpl implements MainPresenter {
 
     MainView mainView;
+    Context context;
     CrashServicesInteractor crashServicesInteractor;
 
     public MainPresenterImpl(MainView mainView, Context context) {
         this.mainView = mainView;
+        this.context = context;
         crashServicesInteractor = new CrashServicesInteractorImpl(context);
     }
 
@@ -38,5 +41,10 @@ public class MainPresenterImpl implements MainPresenter {
     @Override
     public void throwOutOfMemory() {
         throw new OutOfMemoryError("Test OutOfMemory error");
+    }
+
+    @Override
+    public void throwBadTokenException() {
+        throw new BadTokenException("Test BadTokenException");
     }
 }
