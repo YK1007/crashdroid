@@ -14,7 +14,8 @@
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:gravity="center_horizontal">
 
         <TextView
             android:text="@string/select_services"
@@ -27,43 +28,70 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/servicesLayout"
-            android:layout_marginBottom="3dp">
+            android:layout_marginBottom="3dp"
+            android:gravity="center_horizontal">
 
         </LinearLayout>
 
-        <Button
-            android:layout_width="wrap_content"
+        <ScrollView
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/throw_out_of_memory"
-            android:id="@+id/buttonOutOfMemory"/>
+            >
 
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/throw_bad_token_exception"
-            android:id="@+id/buttonBadTokenException"/>
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
 
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/throw_stack_overflow_exception"
-            android:id="@+id/buttonStackOverflowError"/>
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center_horizontal">
 
-        <com.namshi.crashdroid.view.CustomScrollView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/throw_pointer_index_out_of_range"
-                android:id="@+id/buttonPointerIndexOutOfRange"/>
-        </com.namshi.crashdroid.view.CustomScrollView>
+                    <Button
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/throw_out_of_memory"
+                        android:id="@+id/buttonOutOfMemory"/>
 
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/throw_illegal_state_exception"
-            android:id="@+id/buttonIllegalFragmentException"/>
+                    <Button
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/throw_bad_token_exception"
+                        android:id="@+id/buttonBadTokenException"/>
+
+                    <Button
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/throw_stack_overflow_exception"
+                        android:id="@+id/buttonStackOverflowError"/>
+
+                    <com.namshi.crashdroid.view.CustomScrollView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+                        <Button
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/throw_pointer_index_out_of_range"
+                            android:id="@+id/buttonPointerIndexOutOfRange"/>
+                    </com.namshi.crashdroid.view.CustomScrollView>
+
+                    <Button
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/throw_illegal_state_exception"
+                        android:id="@+id/buttonIllegalFragmentException"/>
+
+                    <Button
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/throw_null_pointer_exception"
+                        android:id="@+id/buttonNullPointerException"/>
+                </LinearLayout>
+
+            </LinearLayout>
+        </ScrollView>
 
     </LinearLayout>
 

@@ -97,4 +97,9 @@ public class MainActivity extends AppCompatActivity implements MainView, OnCheck
     public void onIllegalStateExceptionClick(View v) {
         presenter.throwIllegalStateException();
     }
+
+    @OnClick(R.id.buttonNullPointerException)
+    public void onNullPointerExceptionClick(View v) {
+        presenter.throwNullPointerException();
+    }
 }

@@ -2,6 +2,7 @@ package com.namshi.crashdroid;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.res.AssetManager;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.AsyncTask;
@@ -28,7 +29,7 @@ public class BlackHoleInteractorImpl implements BlackHoleInteractor {
     }
 
     @Override
-    public void throwStackOverflowException() {
+    public void generateStackOverflowException() {
         new Thread(new Runnable() {
             @Override
             public void run() {
@@ -39,12 +40,12 @@ public class BlackHoleInteractorImpl implements BlackHoleInteractor {
     }
 
     @Override
-    public void throwBadTokenException() {
+    public void generateBadTokenException() {
         throw new BadTokenException("Test BadTokenException");
     }
 
     @Override
-    public void throwOutOfMemory() {
+    public void generateOutOfMemory() {
         try {
             InputStream bitmap = context.getAssets().open("really_big_image.jpg");
             Bitmap bit = BitmapFactory.decodeStream(bitmap);
@@ -56,7 +57,7 @@ public class BlackHoleInteractorImpl implements BlackHoleInteractor {
     }
 
     @Override
-    public void throwIllegalStateException() {
+    public void generateIllegalStateException() {
         ((Activity)context).finish();
         new AsyncTask<Void, Void, Void>(){
             @Override
@@ -79,6 +80,12 @@ public class BlackHoleInteractorImpl implements BlackHoleInteractor {
                         .commit();
             }
         }.execute((Void)null);
+    }
+
+    @Override
+    public void generateNullPointerException() {
+        context = null;
+        AssetManager assets = context.getAssets();
     }
 
 

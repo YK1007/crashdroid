@@ -7,9 +7,10 @@
     <string name="app_see">AppSee</string>
     <string name="crashlytics">Crashlytics</string>
     <string name="google_analytics">Google Analytics</string>
-    <string name="throw_out_of_memory">Throw "Out Of Memory"</string>
-    <string name="throw_bad_token_exception">Throw "Bad Token Exception"</string>
-    <string name="throw_stack_overflow_exception">Throw "Stack Overflow Exception"</string>
-    <string name="throw_pointer_index_out_of_range">Throw "Pointer Index Out Of Range"</string>
-    <string name="throw_illegal_state_exception">Throw "Illegal State Exception"</string>
+    <string name="throw_out_of_memory">"Out Of Memory"</string>
+    <string name="throw_bad_token_exception">"Bad Token Exception"</string>
+    <string name="throw_stack_overflow_exception">"Stack Overflow Exception"</string>
+    <string name="throw_pointer_index_out_of_range">"Pointer Index Out Of Range"</string>
+    <string name="throw_illegal_state_exception">"Illegal State Exception"</string>
+    <string name="throw_null_pointer_exception">"Null Pointer Exception"</string>
 </resources>

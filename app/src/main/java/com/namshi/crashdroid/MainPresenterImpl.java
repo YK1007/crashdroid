@@ -41,22 +41,27 @@ public class MainPresenterImpl implements MainPresenter {
 
     @Override
     public void throwOutOfMemory() {
-        blackHoleInteractor.throwOutOfMemory();
+        blackHoleInteractor.generateOutOfMemory();
     }
 
     @Override
     public void throwBadTokenException() {
-        blackHoleInteractor.throwBadTokenException();
+        blackHoleInteractor.generateBadTokenException();
     }
 
     @Override
     public void throwStackOverflowException() {
-        blackHoleInteractor.throwStackOverflowException();
+        blackHoleInteractor.generateStackOverflowException();
     }
 
     @Override
     public void throwIllegalStateException() {
-        blackHoleInteractor.throwIllegalStateException();
+        blackHoleInteractor.generateIllegalStateException();
+    }
+
+    @Override
+    public void throwNullPointerException() {
+        blackHoleInteractor.generateNullPointerException();
     }
 
 }

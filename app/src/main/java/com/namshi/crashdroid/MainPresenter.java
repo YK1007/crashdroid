@@ -11,4 +11,5 @@ public interface MainPresenter {
     void throwBadTokenException();
     void throwStackOverflowException();
     void throwIllegalStateException();
+    void throwNullPointerException();
 }
