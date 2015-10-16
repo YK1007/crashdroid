@@ -10,4 +10,5 @@ public interface MainPresenter {
     void throwOutOfMemory();
     void throwBadTokenException();
     void throwStackOverflowException();
+    void throwIllegalStateException();
 }

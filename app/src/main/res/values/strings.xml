@@ -11,4 +11,5 @@
     <string name="throw_bad_token_exception">Throw "Bad Token Exception"</string>
     <string name="throw_stack_overflow_exception">Throw "Stack Overflow Exception"</string>
     <string name="throw_pointer_index_out_of_range">Throw "Pointer Index Out Of Range"</string>
+    <string name="throw_illegal_state_exception">Throw "Illegal State Exception"</string>
 </resources>

@@ -92,4 +92,9 @@ public class MainActivity extends AppCompatActivity implements MainView, OnCheck
     public void onStackOverflowExceptionClick(View v) {
         presenter.throwStackOverflowException();
     }
+
+    @OnClick(R.id.buttonIllegalFragmentException)
+    public void onIllegalStateExceptionClick(View v) {
+        presenter.throwIllegalStateException();
+    }
 }

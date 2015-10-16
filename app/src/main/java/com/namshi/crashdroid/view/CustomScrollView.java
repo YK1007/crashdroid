@@ -1,4 +1,4 @@
-package com.namshi.crashdroid;
+package com.namshi.crashdroid.view;
 
 import android.content.Context;
 import android.util.AttributeSet;
