@@ -1,6 +1,5 @@
 package com.namshi.crashdroid;
 
-import android.app.Activity;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.SparseArray;
@@ -24,7 +23,6 @@ public class MainActivity extends AppCompatActivity implements MainView, OnCheck
     @Bind(R.id.progressBarFrameLayout)
     FrameLayout progressBarLayout;
 
-    Activity deadActivity;
     MainPresenter presenter;
 
     @Override

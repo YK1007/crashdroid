@@ -48,6 +48,17 @@
             android:layout_height="wrap_content"
             android:text="@string/throw_stack_overflow_exception"
             android:id="@+id/buttonStackOverflowError"/>
+
+        <com.namshi.crashdroid.CustomScrollView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/throw_pointer_index_out_of_range"
+                android:id="@+id/buttonPointerIndexOutOfRange"/>
+        </com.namshi.crashdroid.CustomScrollView>
+
     </LinearLayout>
 
     <FrameLayout
