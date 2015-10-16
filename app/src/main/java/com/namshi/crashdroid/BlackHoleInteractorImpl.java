@@ -2,12 +2,18 @@ package com.namshi.crashdroid;
 
 import android.app.Activity;
 import android.content.Context;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.os.AsyncTask;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
 import android.view.WindowManager.BadTokenException;
+import android.widget.ImageView;
 
 import com.namshi.crashdroid.fragment.DummyFragment;
+
+import java.io.IOException;
+import java.io.InputStream;
 
 /**
  * Every method in this class must trigger application crash.
@@ -39,7 +45,14 @@ public class BlackHoleInteractorImpl implements BlackHoleInteractor {
 
     @Override
     public void throwOutOfMemory() {
-        throw new OutOfMemoryError("Test OutOfMemory error");
+        try {
+            InputStream bitmap = context.getAssets().open("really_big_image.jpg");
+            Bitmap bit = BitmapFactory.decodeStream(bitmap);
+            ImageView testImage = new ImageView(context);
+            testImage.setImageBitmap(bit);
+        } catch (IOException e1) {
+            e1.printStackTrace();
+        }
     }
 
     @Override
