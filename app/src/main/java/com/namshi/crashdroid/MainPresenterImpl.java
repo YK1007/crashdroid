@@ -35,6 +35,11 @@ public class MainPresenterImpl implements MainPresenter {
     }
 
     @Override
+    public void onPause() {
+
+    }
+
+    @Override
     public void onServiceChecked(int checkedServiceId, boolean isChecked) {
         crashServicesInteractor.updateServiceState(checkedServiceId, isChecked);
     }
