@@ -28,7 +28,7 @@ public class AppSeeService extends CrashService{
 
     @Override
     public boolean isEnabled() {
-        return false;
+        return true;
     }
 
     @Override

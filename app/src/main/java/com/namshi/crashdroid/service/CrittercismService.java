@@ -28,7 +28,7 @@ public class CrittercismService extends CrashService {
 
     @Override
     public boolean isEnabled() {
-        return true;
+        return false;
     }
 
     @Override
