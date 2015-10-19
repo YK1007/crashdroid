@@ -2,6 +2,7 @@ package com.namshi.crashdroid.service;
 
 import android.content.Context;
 
+import com.appsee.Appsee;
 import com.namshi.crashdroid.R;
 
 /**
@@ -11,6 +12,7 @@ import com.namshi.crashdroid.R;
 public class AppSeeService extends CrashService{
 
     public static final int ID = 3;
+    private static final String API_KEY = "ea3a20cecf2b4c39b7e51d12281243cc";
 
     public AppSeeService(Context context) {
         super(context);
@@ -33,11 +35,11 @@ public class AppSeeService extends CrashService{
 
     @Override
     public void enable() {
-
+        Appsee.start(API_KEY);
     }
 
     @Override
     public void disable() {
-
+        Appsee.stopAndUpload();
     }
 }

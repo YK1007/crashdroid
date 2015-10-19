@@ -44,7 +44,7 @@ public class MainActivity extends AppCompatActivity implements MainView, OnCheck
     protected void onPause() {
         super.onPause();
         presenter.onActivityPause();
-    }g
+    }
 
     @Override
     public void setupServices(SparseArray<CrashService> services) {

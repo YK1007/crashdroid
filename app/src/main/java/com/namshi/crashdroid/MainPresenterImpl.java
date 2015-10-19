@@ -3,6 +3,7 @@ package com.namshi.crashdroid;
 import android.app.Activity;
 import android.content.Context;
 
+import com.namshi.crashdroid.service.AppSeeService;
 import com.namshi.crashdroid.service.HockeyAppService;
 
 /**
@@ -25,16 +26,27 @@ public class MainPresenterImpl implements MainPresenter {
     @Override
     public void onActivityCreate() {
         mainView.setupServices(crashServicesInteractor.initServices());
+        crashServicesInteractor.getServiceById(AppSeeService.ID).enable();
     }
 
     @Override
     public void onActivityResume() {
-        crashServicesInteractor.getServiceById(HockeyAppService.ID).enable();
+        resumeServices();
     }
 
     @Override
     public void onActivityPause() {
+        pauseServices();
+    }
+
+    private void resumeServices() {
+        crashServicesInteractor.getServiceById(HockeyAppService.ID).enable();
+        crashServicesInteractor.getServiceById(AppSeeService.ID).enable();
+    }
+
+    private void pauseServices() {
         crashServicesInteractor.getServiceById(HockeyAppService.ID).disable();
+        crashServicesInteractor.getServiceById(AppSeeService.ID).disable();
     }
 
     @Override

@@ -21,6 +21,7 @@
             </intent-filter>
         </activity>
         <activity android:name="net.hockeyapp.android.UpdateActivity" />
+        <service android:name="com.appsee.AppseeBackgroundUploader" />
     </application>
 
 </manifest>
