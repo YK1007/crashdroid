@@ -1,9 +1,9 @@
 package com.namshi.crashdroid;
 
+import android.app.Activity;
 import android.content.Context;
-import android.util.SparseArray;
 
-import com.namshi.crashdroid.service.CrashService;
+import com.namshi.crashdroid.service.HockeyAppService;
 
 /**
  * Created by vgaidarji on 10/15/15.
@@ -18,25 +18,23 @@ public class MainPresenterImpl implements MainPresenter {
     public MainPresenterImpl(MainView mainView, Context context) {
         this.mainView = mainView;
         this.context = context;
-        crashServicesInteractor = new CrashServicesInteractorImpl(context);
+        crashServicesInteractor = getCrashServicesInteractor();
         blackHoleInteractor = new BlackHoleInteractorImpl(context);
     }
 
     @Override
-    public void onCreate() {
-        SparseArray<CrashService> services = crashServicesInteractor.createServices();
-        crashServicesInteractor.startServices();
-        mainView.setupServices(services);
+    public void onActivityCreate() {
+        mainView.setupServices(crashServicesInteractor.initServices());
     }
 
     @Override
-    public void onResume() {
-
+    public void onActivityResume() {
+        crashServicesInteractor.getServiceById(HockeyAppService.ID).enable();
     }
 
     @Override
-    public void onPause() {
-
+    public void onActivityPause() {
+        crashServicesInteractor.getServiceById(HockeyAppService.ID).disable();
     }
 
     @Override
@@ -67,6 +65,10 @@ public class MainPresenterImpl implements MainPresenter {
     @Override
     public void throwNullPointerException() {
         blackHoleInteractor.generateNullPointerException();
+    }
+
+    private CrashServicesInteractor getCrashServicesInteractor() {
+        return ((CrashdroidApplication)(((Activity) context).getApplication())).getCrashServicesInteractor();
     }
 
 }

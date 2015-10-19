@@ -10,7 +10,7 @@ import com.namshi.crashdroid.R;
  */
 public class AppSeeService extends CrashService{
 
-    public static final int ID = 4;
+    public static final int ID = 3;
 
     public AppSeeService(Context context) {
         super(context);

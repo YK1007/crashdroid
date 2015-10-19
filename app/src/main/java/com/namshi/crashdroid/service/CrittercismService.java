@@ -10,7 +10,7 @@ import com.namshi.crashdroid.R;
  */
 public class CrittercismService extends CrashService {
 
-    public static final int ID = 3;
+    public static final int ID = 2;
 
     public CrittercismService(Context context) {
         super(context);

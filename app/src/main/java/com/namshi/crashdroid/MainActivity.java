@@ -31,14 +31,20 @@ public class MainActivity extends AppCompatActivity implements MainView, OnCheck
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
         presenter = new MainPresenterImpl(this, this);
-        presenter.onCreate();
+        presenter.onActivityCreate();
     }
 
     @Override
     protected void onResume() {
         super.onResume();
-        presenter.onResume();
+        presenter.onActivityResume();
     }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        presenter.onActivityPause();
+    }g
 
     @Override
     public void setupServices(SparseArray<CrashService> services) {

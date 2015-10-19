@@ -10,7 +10,7 @@ import com.namshi.crashdroid.R;
  */
 public class CrashlyticsService extends CrashService{
 
-    public static final int ID = 5;
+    public static final int ID = 4;
 
     public CrashlyticsService(Context context) {
         super(context);

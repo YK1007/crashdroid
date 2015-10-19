@@ -10,7 +10,7 @@ import com.namshi.crashdroid.R;
  */
 public class GoogleAnalyticsService extends CrashService{
 
-    public static final int ID = 6;
+    public static final int ID = 5;
 
     public GoogleAnalyticsService(Context context) {
         super(context);

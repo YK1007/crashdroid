@@ -23,22 +23,30 @@ public class CrashServicesInteractorImpl implements CrashServicesInteractor{
     }
 
     @Override
-    public SparseArray<CrashService> createServices() {
+    public SparseArray<CrashService> initServices() {
         if(registeredServices != null) {
             return registeredServices;
         }
         registeredServices = new SparseArray<>(6);
-        registeredServices.put(0, new HockeyAppService(context));
-        registeredServices.put(1, new NewRelicService(context));
-        registeredServices.put(2, new CrittercismService(context));
-        registeredServices.put(3, new AppSeeService(context));
-        registeredServices.put(4, new CrashlyticsService(context));
-        registeredServices.put(5, new GoogleAnalyticsService(context));
+        registeredServices.put(HockeyAppService.ID, new HockeyAppService(context));
+        registeredServices.put(NewRelicService.ID, new NewRelicService(context));
+        registeredServices.put(CrittercismService.ID, new CrittercismService(context));
+        registeredServices.put(AppSeeService.ID, new AppSeeService(context));
+        registeredServices.put(CrashlyticsService.ID, new CrashlyticsService(context));
+        registeredServices.put(GoogleAnalyticsService.ID, new GoogleAnalyticsService(context));
         return registeredServices;
     }
 
     @Override
-    public void startServices() {
+    public CrashService getServiceById(int serviceId) {
+        if(registeredServices == null) {
+            return null;
+        }
+        return registeredServices.get(serviceId);
+    }
+
+    @Override
+    public void startAllServices() {
         if(registeredServices == null) {
             return;
         }

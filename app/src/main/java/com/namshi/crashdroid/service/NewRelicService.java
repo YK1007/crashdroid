@@ -1,6 +1,5 @@
 package com.namshi.crashdroid.service;
 
-import android.app.Activity;
 import android.content.Context;
 
 import com.namshi.crashdroid.R;
@@ -12,7 +11,7 @@ import com.newrelic.agent.android.NewRelic;
  */
 public class NewRelicService extends CrashService{
 
-    public static final int ID = 2;
+    public static final int ID = 1;
     private static final String TOKEN = "AAcf1379f8d4e1be18b219acddc3fd8ada80771c8f";
 
     public NewRelicService(Context context) {
@@ -36,7 +35,7 @@ public class NewRelicService extends CrashService{
 
     @Override
     public void enable() {
-        NewRelic.withApplicationToken(TOKEN).start(((Activity)context).getApplication());
+        NewRelic.withApplicationToken(TOKEN).start(context);
     }
 
     @Override
