@@ -1,4 +1,4 @@
-package com.namshi.crashdroid;
+package com.namshi.crashdroid.interactor;
 
 import android.util.SparseArray;
 

@@ -1,4 +1,4 @@
-package com.namshi.crashdroid;
+package com.namshi.crashdroid.presenter;
 
 /**
  * Contains Activity lifecycle related methods.

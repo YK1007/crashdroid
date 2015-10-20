@@ -1,8 +1,13 @@
-package com.namshi.crashdroid;
+package com.namshi.crashdroid.presenter;
 
 import android.app.Activity;
 import android.content.Context;
 
+import com.namshi.crashdroid.CrashdroidApplication;
+import com.namshi.crashdroid.MainView;
+import com.namshi.crashdroid.interactor.BlackHoleInteractor;
+import com.namshi.crashdroid.interactor.BlackHoleInteractorImpl;
+import com.namshi.crashdroid.interactor.CrashServicesInteractor;
 import com.namshi.crashdroid.service.AppSeeService;
 import com.namshi.crashdroid.service.HockeyAppService;
 

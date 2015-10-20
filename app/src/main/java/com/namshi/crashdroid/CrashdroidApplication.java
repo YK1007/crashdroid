@@ -2,6 +2,8 @@ package com.namshi.crashdroid;
 
 import android.app.Application;
 
+import com.namshi.crashdroid.interactor.CrashServicesInteractor;
+import com.namshi.crashdroid.interactor.CrashServicesInteractorImpl;
 import com.namshi.crashdroid.service.NewRelicService;
 
 /**

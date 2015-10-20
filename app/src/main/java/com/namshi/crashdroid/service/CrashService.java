@@ -2,7 +2,7 @@ package com.namshi.crashdroid.service;
 
 import android.content.Context;
 
-import com.namshi.crashdroid.ActivityLifecyclePresenter;
+import com.namshi.crashdroid.presenter.ActivityLifecyclePresenter;
 
 /**
  * Contains general information about Crash Service.

@@ -1,4 +1,4 @@
-package com.namshi.crashdroid;
+package com.namshi.crashdroid.interactor;
 
 /**
  * Created by vgaidarji on 10/16/15.

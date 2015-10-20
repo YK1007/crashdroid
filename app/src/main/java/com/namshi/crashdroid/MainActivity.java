@@ -10,6 +10,8 @@ import android.widget.CompoundButton.OnCheckedChangeListener;
 import android.widget.FrameLayout;
 import android.widget.LinearLayout;
 
+import com.namshi.crashdroid.presenter.MainPresenter;
+import com.namshi.crashdroid.presenter.MainPresenterImpl;
 import com.namshi.crashdroid.service.CrashService;
 
 import butterknife.Bind;

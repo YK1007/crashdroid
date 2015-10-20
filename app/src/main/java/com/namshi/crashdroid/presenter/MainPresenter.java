@@ -1,4 +1,4 @@
-package com.namshi.crashdroid;
+package com.namshi.crashdroid.presenter;
 
 /**
  * Created by vgaidarji on 10/15/15.
