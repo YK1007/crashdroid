@@ -40,6 +40,7 @@ public class NewRelicService extends CrashService{
 
     @Override
     public void disable() {
-
+        // we don't have other public API to stop NewRelic interaction.
+        NewRelic.shutdown();
     }
 }
