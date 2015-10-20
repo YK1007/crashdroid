@@ -9,6 +9,7 @@ import com.namshi.crashdroid.interactor.BlackHoleInteractor;
 import com.namshi.crashdroid.interactor.BlackHoleInteractorImpl;
 import com.namshi.crashdroid.interactor.CrashServicesInteractor;
 import com.namshi.crashdroid.service.AppSeeService;
+import com.namshi.crashdroid.service.CrittercismService;
 import com.namshi.crashdroid.service.HockeyAppService;
 
 /**
@@ -32,6 +33,7 @@ public class MainPresenterImpl implements MainPresenter {
     public void onActivityCreate() {
         mainView.setupServices(crashServicesInteractor.initServices());
         crashServicesInteractor.getServiceById(AppSeeService.ID).enable();
+        crashServicesInteractor.getServiceById(CrittercismService.ID).enable();
     }
 
     @Override

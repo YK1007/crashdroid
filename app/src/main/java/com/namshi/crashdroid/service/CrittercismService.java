@@ -2,6 +2,7 @@ package com.namshi.crashdroid.service;
 
 import android.content.Context;
 
+import com.crittercism.app.Crittercism;
 import com.namshi.crashdroid.R;
 
 /**
@@ -10,6 +11,7 @@ import com.namshi.crashdroid.R;
  */
 public class CrittercismService extends CrashService {
 
+    private static final String APP_ID = "562343238d4d8c0a00d07e6a";
     public static final int ID = 2;
 
     public CrittercismService(Context context) {
@@ -28,16 +30,17 @@ public class CrittercismService extends CrashService {
 
     @Override
     public boolean isEnabled() {
-        return false;
+        return true;
     }
 
     @Override
     public void enable() {
-
+        Crittercism.initialize(context.getApplicationContext(), APP_ID);
+        Crittercism.setOptOutStatus(true);
     }
 
     @Override
     public void disable() {
-
+        Crittercism.setOptOutStatus(false);
     }
 }
