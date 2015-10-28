@@ -2,10 +2,12 @@ package com.namshi.crashdroid;
 
 import android.app.Application;
 
+import com.crashlytics.android.Crashlytics;
 import com.namshi.crashdroid.interactor.CrashServicesInteractor;
 import com.namshi.crashdroid.interactor.CrashServicesInteractorImpl;
 import com.namshi.crashdroid.service.GoogleAnalyticsService;
 import com.namshi.crashdroid.service.NewRelicService;
+import io.fabric.sdk.android.Fabric;
 
 /**
  * Created by vgaidarji on 10/19/15.
@@ -17,6 +19,7 @@ public class CrashdroidApplication extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
+        Fabric.with(this, new Crashlytics());
         setupServicesInteractor();
         enableServices();
     }

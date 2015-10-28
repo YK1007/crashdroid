@@ -2,7 +2,11 @@ package com.namshi.crashdroid.service;
 
 import android.content.Context;
 
+import com.crashlytics.android.Crashlytics;
+import com.crashlytics.android.core.CrashlyticsCore;
 import com.namshi.crashdroid.R;
+
+import io.fabric.sdk.android.Fabric;
 
 /**
  * Crashlytics crash service.
@@ -28,16 +32,18 @@ public class CrashlyticsService extends CrashService{
 
     @Override
     public boolean isEnabled() {
-        return false;
+        return true;
     }
 
     @Override
     public void enable() {
-
+        Fabric.with(context.getApplicationContext(), new Crashlytics());
     }
 
     @Override
     public void disable() {
-
+        CrashlyticsCore core = new CrashlyticsCore.Builder().disabled(true).build();
+        Fabric.with(context.getApplicationContext(),
+                new Crashlytics.Builder().core(core).build());
     }
 }
