@@ -4,6 +4,7 @@ import android.app.Application;
 
 import com.namshi.crashdroid.interactor.CrashServicesInteractor;
 import com.namshi.crashdroid.interactor.CrashServicesInteractorImpl;
+import com.namshi.crashdroid.service.GoogleAnalyticsService;
 import com.namshi.crashdroid.service.NewRelicService;
 
 /**
@@ -22,6 +23,7 @@ public class CrashdroidApplication extends Application {
 
     private void enableServices() {
         crashServicesInteractor.getServiceById(NewRelicService.ID).enable();
+        crashServicesInteractor.getServiceById(GoogleAnalyticsService.ID).enable();
     }
 
     private void setupServicesInteractor() {

@@ -2,6 +2,7 @@ package com.namshi.crashdroid.service;
 
 import android.content.Context;
 
+import com.namshi.crashdroid.AnalyticsTrackers;
 import com.namshi.crashdroid.R;
 
 /**
@@ -28,16 +29,18 @@ public class GoogleAnalyticsService extends CrashService{
 
     @Override
     public boolean isEnabled() {
-        return false;
+        return true;
     }
 
     @Override
     public void enable() {
-
+        AnalyticsTrackers.initialize(context.getApplicationContext());
+        AnalyticsTrackers.getInstance().get(AnalyticsTrackers.Target.APP);
+        AnalyticsTrackers.getInstance().enableAnalytics();
     }
 
     @Override
     public void disable() {
-
+        AnalyticsTrackers.getInstance().disableAnalytics();
     }
 }
