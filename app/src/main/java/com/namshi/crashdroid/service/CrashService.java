@@ -11,9 +11,15 @@ import com.namshi.crashdroid.presenter.ActivityLifecyclePresenter;
 public abstract class CrashService implements ActivityLifecyclePresenter {
 
     protected Context context;
+    private boolean isEnabled;
 
     public CrashService(Context context) {
         this.context = context;
+        this.isEnabled = true;
+    }
+
+    public void setEnabled(boolean isEnabled) {
+        this.isEnabled = isEnabled;
     }
 
     /**
@@ -33,7 +39,9 @@ public abstract class CrashService implements ActivityLifecyclePresenter {
      * <br>true - service enabled, false - otherwise.
      * @return
      */
-    public abstract boolean isEnabled();
+    public boolean isEnabled() {
+        return this.isEnabled;
+    }
 
     /**
      * Enable service.

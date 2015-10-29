@@ -29,11 +29,6 @@ public class NewRelicService extends CrashService{
     }
 
     @Override
-    public boolean isEnabled() {
-        return true;
-    }
-
-    @Override
     public void enable() {
         NewRelic.withApplicationToken(TOKEN).start(context);
     }

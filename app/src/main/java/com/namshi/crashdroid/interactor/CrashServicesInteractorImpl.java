@@ -2,7 +2,6 @@ package com.namshi.crashdroid.interactor;
 
 import android.content.Context;
 import android.util.SparseArray;
-import android.widget.Toast;
 
 import com.namshi.crashdroid.service.AppSeeService;
 import com.namshi.crashdroid.service.CrashService;
@@ -64,13 +63,7 @@ public class CrashServicesInteractorImpl implements CrashServicesInteractor{
     public void updateServiceState(int checkedServiceId, boolean isChecked) {
         CrashService service = getServiceById(checkedServiceId);
         if(service != null) {
-            if(isChecked) {
-                service.enable();
-            }else {
-                service.disable();
-            }
-            Toast.makeText(context, String.format("%s%s", service.getName(),
-                    isChecked ? " enabled" : " disabled"), Toast.LENGTH_SHORT).show();
+            service.setEnabled(isChecked);
         }
     }
 }

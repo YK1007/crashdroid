@@ -32,11 +32,6 @@ public class HockeyAppService extends CrashService{
     }
 
     @Override
-    public boolean isEnabled() {
-        return true;
-    }
-
-    @Override
     public void enable() {
         CrashManager.register(context, APP_ID, new CrashManagerListener() {
             @Override

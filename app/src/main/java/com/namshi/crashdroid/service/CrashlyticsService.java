@@ -31,11 +31,6 @@ public class CrashlyticsService extends CrashService{
     }
 
     @Override
-    public boolean isEnabled() {
-        return true;
-    }
-
-    @Override
     public void enable() {
         Fabric.with(context.getApplicationContext(), new Crashlytics());
     }

@@ -29,11 +29,6 @@ public class AppSeeService extends CrashService{
     }
 
     @Override
-    public boolean isEnabled() {
-        return true;
-    }
-
-    @Override
     public void enable() {
         Appsee.start(API_KEY);
     }
