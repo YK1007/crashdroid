@@ -8,4 +8,5 @@ public interface ActivityLifecyclePresenter {
     void onActivityCreate();
     void onActivityResume();
     void onActivityPause();
+    void onActivityDestroy();
 }

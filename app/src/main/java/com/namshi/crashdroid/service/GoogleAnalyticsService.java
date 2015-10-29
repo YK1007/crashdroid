@@ -29,17 +29,19 @@ public class GoogleAnalyticsService extends CrashService{
 
     @Override
     public void enable() {
-        if(isEnabled()) {
+        if(isEnabled() && !isStarted) {
             AnalyticsTrackers.initialize(context.getApplicationContext());
             AnalyticsTrackers.getInstance().get(AnalyticsTrackers.Target.APP);
             AnalyticsTrackers.getInstance().enableAnalytics();
+            isStarted = true;
         }
     }
 
     @Override
     public void disable() {
-        if(isEnabled()) {
+        if(isEnabled() && isStarted) {
             AnalyticsTrackers.getInstance().disableAnalytics();
+            isStarted = false;
         }
     }
 }

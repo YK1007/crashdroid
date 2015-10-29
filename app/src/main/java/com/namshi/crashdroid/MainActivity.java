@@ -49,6 +49,12 @@ public class MainActivity extends AppCompatActivity implements MainView, OnCheck
     }
 
     @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        presenter.onActivityDestroy();
+    }
+
+    @Override
     public void setupServices(SparseArray<CrashService> services) {
         createServicesCheckboxes(services);
     }
@@ -75,7 +81,6 @@ public class MainActivity extends AppCompatActivity implements MainView, OnCheck
         CheckBox cb = new CheckBox(this);
         cb.setText(service.getName());
         cb.setTag(service.getId());
-        cb.setEnabled(service.isEnabled());
         cb.setChecked(service.isEnabled());
         cb.setOnCheckedChangeListener(this);
         return cb;
@@ -109,5 +114,10 @@ public class MainActivity extends AppCompatActivity implements MainView, OnCheck
     @OnClick(R.id.buttonNullPointerException)
     public void onNullPointerExceptionClick(View v) {
         presenter.throwNullPointerException();
+    }
+
+    @OnClick(R.id.buttonApplyChanges)
+    public void onApplyChangesClick(View v) {
+        presenter.onApplyChangesClick();
     }
 }

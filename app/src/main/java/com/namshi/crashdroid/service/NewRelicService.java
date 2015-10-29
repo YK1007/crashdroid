@@ -30,16 +30,18 @@ public class NewRelicService extends CrashService{
 
     @Override
     public void enable() {
-        if(isEnabled()) {
+        if(isEnabled() && !isStarted) {
             NewRelic.withApplicationToken(TOKEN).start(context);
+            isStarted = true;
         }
     }
 
     @Override
     public void disable() {
-        if(isEnabled()) {
+        if(isEnabled() && isStarted) {
             // we don't have other public API to stop NewRelic interaction.
             NewRelic.shutdown();
+            isStarted = false;
         }
     }
 }

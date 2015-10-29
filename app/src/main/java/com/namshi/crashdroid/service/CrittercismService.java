@@ -30,16 +30,18 @@ public class CrittercismService extends CrashService {
 
     @Override
     public void enable() {
-        if(isEnabled()) {
+        if(isEnabled() && !isStarted) {
             Crittercism.initialize(context.getApplicationContext(), APP_ID);
             Crittercism.setOptOutStatus(true);
+            isStarted = true;
         }
     }
 
     @Override
     public void disable() {
-        if(isEnabled()) {
+        if(isEnabled() && isStarted) {
             Crittercism.setOptOutStatus(false);
+            isStarted = false;
         }
     }
 }

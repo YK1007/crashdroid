@@ -46,6 +46,11 @@ public class MainPresenterImpl implements MainPresenter {
         pauseServices();
     }
 
+    @Override
+    public void onActivityDestroy() {
+        crashServicesInteractor.refreshServicesStates();
+    }
+
     private void resumeServices() {
         crashServicesInteractor.getServiceById(HockeyAppService.ID).enable();
         crashServicesInteractor.getServiceById(AppSeeService.ID).enable();
@@ -84,6 +89,11 @@ public class MainPresenterImpl implements MainPresenter {
     @Override
     public void throwNullPointerException() {
         blackHoleInteractor.generateNullPointerException();
+    }
+
+    @Override
+    public void onApplyChangesClick() {
+        crashServicesInteractor.saveServicesStates();
     }
 
     private CrashServicesInteractor getCrashServicesInteractor() {

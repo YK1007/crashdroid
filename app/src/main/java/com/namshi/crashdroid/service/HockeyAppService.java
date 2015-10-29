@@ -33,20 +33,22 @@ public class HockeyAppService extends CrashService{
 
     @Override
     public void enable() {
-        if(isEnabled()) {
+        if(isEnabled() && !isStarted) {
             CrashManager.register(context, APP_ID, new CrashManagerListener() {
                 @Override
                 public boolean shouldAutoUploadCrashes() {
                     return true;
                 }
             });
+            isStarted = true;
         }
     }
 
     @Override
     public void disable() {
-        if(isEnabled()) {
+        if(isEnabled() && isStarted) {
             UpdateManager.unregister();
+            isStarted = false;
         }
     }
 }

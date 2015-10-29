@@ -10,4 +10,5 @@ public interface MainPresenter extends ActivityLifecyclePresenter{
     void throwStackOverflowException();
     void throwIllegalStateException();
     void throwNullPointerException();
+    void onApplyChangesClick();
 }

@@ -2,20 +2,25 @@ package com.namshi.crashdroid.service;
 
 import android.content.Context;
 
-import com.namshi.crashdroid.presenter.ActivityLifecyclePresenter;
-
 /**
  * Contains general information about Crash Service.
  * Created by vgaidarji on 10/15/15.
  */
-public abstract class CrashService implements ActivityLifecyclePresenter {
+public abstract class CrashService {
 
     protected Context context;
-    private boolean isEnabled;
+    /**
+     * Shows if service should be started at application launch.
+     */
+    private boolean isEnabled = false;
+    /**
+     * Represents service state. <code>true</code> - the service is up and running,
+     * <code>false</code> - otherwise.
+     */
+    protected boolean isStarted = false;
 
     public CrashService(Context context) {
         this.context = context;
-        this.isEnabled = true;
     }
 
     public void setEnabled(boolean isEnabled) {
@@ -52,19 +57,4 @@ public abstract class CrashService implements ActivityLifecyclePresenter {
      * Disable service.
      */
     public abstract void disable();
-
-    @Override
-    public void onActivityCreate() {
-
-    }
-
-    @Override
-    public void onActivityResume() {
-
-    }
-
-    @Override
-    public void onActivityPause() {
-
-    }
 }

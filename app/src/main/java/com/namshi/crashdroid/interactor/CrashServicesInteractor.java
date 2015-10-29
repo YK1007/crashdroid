@@ -12,4 +12,10 @@ public interface CrashServicesInteractor {
     CrashService getServiceById(int serviceId);
     void startAllServices();
     void updateServiceState(int checkedServiceId, boolean isChecked);
+
+    /**
+     * Synchronizes services states with states saved in preferences.
+     */
+    void refreshServicesStates();
+    void saveServicesStates();
 }
