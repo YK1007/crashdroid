@@ -30,11 +30,15 @@ public class AppSeeService extends CrashService{
 
     @Override
     public void enable() {
-        Appsee.start(API_KEY);
+        if(isEnabled()) {
+            Appsee.start(API_KEY);
+        }
     }
 
     @Override
     public void disable() {
-        Appsee.stopAndUpload();
+        if(isEnabled()) {
+            Appsee.stopAndUpload();
+        }
     }
 }

@@ -32,13 +32,17 @@ public class CrashlyticsService extends CrashService{
 
     @Override
     public void enable() {
-        Fabric.with(context.getApplicationContext(), new Crashlytics());
+        if(isEnabled()) {
+            Fabric.with(context.getApplicationContext(), new Crashlytics());
+        }
     }
 
     @Override
     public void disable() {
-        CrashlyticsCore core = new CrashlyticsCore.Builder().disabled(true).build();
-        Fabric.with(context.getApplicationContext(),
-                new Crashlytics.Builder().core(core).build());
+        if(isEnabled()) {
+            CrashlyticsCore core = new CrashlyticsCore.Builder().disabled(true).build();
+            Fabric.with(context.getApplicationContext(),
+                    new Crashlytics.Builder().core(core).build());
+        }
     }
 }
