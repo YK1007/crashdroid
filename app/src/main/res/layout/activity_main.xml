@@ -4,109 +4,135 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:paddingBottom="@dimen/activity_vertical_margin"
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    tools:context=".MainActivity"
-    android:orientation="vertical">
+    tools:context=".MainActivity">
 
-    <LinearLayout
-        android:orientation="vertical"
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:gravity="center_horizontal">
-
-        <TextView
-            android:text="@string/select_services"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"/>
+        android:layout_height="wrap_content"
+        >
 
         <LinearLayout
-            android:orientation="vertical"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/servicesLayout"
-            android:layout_marginBottom="3dp"
-            android:gravity="center_horizontal">
-
-        </LinearLayout>
-
-        <ScrollView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            >
+            android:layout_height="match_parent"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
 
             <LinearLayout
                 android:orientation="vertical"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="match_parent"
+                android:background="#dddddd"
+                android:layout_marginBottom="5dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/apply_changes"
+                    android:gravity="center"
+                    android:textSize="16sp"/>
 
                 <LinearLayout
-                    android:orientation="vertical"
+                    android:id="@+id/servicesLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="3dp"
+                    android:gravity="center_horizontal"
+                    android:orientation="vertical">
+
+                </LinearLayout>
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/apply"
+                    android:id="@+id/buttonApplyChanges"
+                    android:minWidth="150dp"
+                    android:layout_gravity="center"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:background="#dddddd">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/trigger_crash"
+                    android:gravity="center"
+                    android:textSize="16sp"/>
+
+                <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
-                    android:layout_gravity="center_horizontal">
+                    android:layout_gravity="center_horizontal"
+                    android:orientation="vertical">
 
                     <Button
+                        android:id="@+id/buttonOutOfMemory"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="@string/throw_out_of_memory"
-                        android:id="@+id/buttonOutOfMemory"/>
+                        android:text="@string/throw_out_of_memory"/>
 
                     <Button
+                        android:id="@+id/buttonBadTokenException"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="@string/throw_bad_token_exception"
-                        android:id="@+id/buttonBadTokenException"/>
+                        android:text="@string/throw_bad_token_exception"/>
 
                     <Button
+                        android:id="@+id/buttonStackOverflowError"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="@string/throw_stack_overflow_exception"
-                        android:id="@+id/buttonStackOverflowError"/>
+                        android:text="@string/throw_stack_overflow_exception"/>
 
                     <com.namshi.crashdroid.view.CustomScrollView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content">
+
                         <Button
+                            android:id="@+id/buttonPointerIndexOutOfRange"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="@string/throw_pointer_index_out_of_range"
-                            android:id="@+id/buttonPointerIndexOutOfRange"/>
+                            android:text="@string/throw_pointer_index_out_of_range"/>
                     </com.namshi.crashdroid.view.CustomScrollView>
 
                     <Button
+                        android:id="@+id/buttonIllegalFragmentException"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="@string/throw_illegal_state_exception"
-                        android:id="@+id/buttonIllegalFragmentException"/>
+                        android:text="@string/throw_illegal_state_exception"/>
 
                     <Button
+                        android:id="@+id/buttonNullPointerException"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="@string/throw_null_pointer_exception"
-                        android:id="@+id/buttonNullPointerException"/>
+                        android:text="@string/throw_null_pointer_exception"/>
                 </LinearLayout>
 
             </LinearLayout>
-        </ScrollView>
-
-    </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
 
     <FrameLayout
+        android:id="@+id/progressBarFrameLayout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="#dddddddd"
-        android:id="@+id/progressBarFrameLayout"
         android:visibility="gone">
 
         <ProgressBar
+            android:id="@+id/progressBar"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/progressBar"
             android:layout_gravity="center"/>
     </FrameLayout>
+
 
 </RelativeLayout>
