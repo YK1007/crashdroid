@@ -31,6 +31,7 @@ public class AppSeeService extends CrashService{
     @Override
     public void enable() {
         if(isEnabled() && !isStarted) {
+            super.enable();
             Appsee.start(API_KEY);
             isStarted = true;
         }
@@ -39,6 +40,7 @@ public class AppSeeService extends CrashService{
     @Override
     public void disable() {
         if(isEnabled() && isStarted) {
+            super.disable();
             Appsee.stopAndUpload();
             isStarted = false;
         }

@@ -33,6 +33,7 @@ public class CrashlyticsService extends CrashService{
     @Override
     public void enable() {
         if(isEnabled() && !isStarted) {
+            super.enable();
             Fabric.with(context.getApplicationContext(), new Crashlytics());
             isStarted = true;
         }
@@ -41,6 +42,7 @@ public class CrashlyticsService extends CrashService{
     @Override
     public void disable() {
         if(isEnabled() && isStarted) {
+            super.disable();
             CrashlyticsCore core = new CrashlyticsCore.Builder().disabled(true).build();
             Fabric.with(context.getApplicationContext(),
                     new Crashlytics.Builder().core(core).build());

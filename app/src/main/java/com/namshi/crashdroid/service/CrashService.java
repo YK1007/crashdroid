@@ -1,6 +1,7 @@
 package com.namshi.crashdroid.service;
 
 import android.content.Context;
+import android.util.Log;
 
 /**
  * Contains general information about Crash Service.
@@ -51,10 +52,14 @@ public abstract class CrashService {
     /**
      * Enable service.
      */
-    public abstract void enable();
+    protected void enable() {
+        Log.d(CrashService.class.getSimpleName(), this.getClass().getSimpleName() + " enabled.");
+    }
 
     /**
      * Disable service.
      */
-    public abstract void disable();
+    protected void disable() {
+        Log.d(CrashService.class.getSimpleName(), getClass().getSimpleName() + " disabled.");
+    }
 }
