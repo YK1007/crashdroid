@@ -131,5 +131,24 @@ public class CrashServicesInteractorImpl implements CrashServicesInteractor{
                 Prefs.putBoolean(service.getName(), true);
             }
         }
+        killApplication();
+    }
+
+    /**
+     * Some services should be started on application launch.
+     * We kill the app in order to apply changes.
+     */
+    private void killApplication() {
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                try {
+                    Thread.sleep(500);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+                System.exit(0);
+            }
+        }).start();
     }
 }

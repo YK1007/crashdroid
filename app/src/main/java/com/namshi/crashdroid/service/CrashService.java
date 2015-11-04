@@ -52,14 +52,14 @@ public abstract class CrashService {
     /**
      * Enable service.
      */
-    protected void enable() {
+    public void enable() {
         Log.d(CrashService.class.getSimpleName(), this.getClass().getSimpleName() + " enabled.");
     }
 
     /**
      * Disable service.
      */
-    protected void disable() {
+    public void disable() {
         Log.d(CrashService.class.getSimpleName(), getClass().getSimpleName() + " disabled.");
     }
 }
