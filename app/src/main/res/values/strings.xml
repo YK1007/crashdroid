@@ -5,7 +5,7 @@
     <string name="new_relic">NewRelic</string>
     <string name="crittercism">Crittercism</string>
     <string name="app_see">AppSee</string>
-    <string name="apply">Apply</string>
+    <string name="apply">Apply &amp; exit</string>
     <string name="apply_changes">Some services can\'t be disabled from the runtime. The changes will be applied only by restarting the application.</string>
     <string name="crashlytics">Crashlytics</string>
     <string name="google_analytics">Google Analytics</string>
