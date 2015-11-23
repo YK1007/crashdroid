@@ -2,6 +2,8 @@
 
 Crashdroid - Android app to test Crash Reporting SDKs
 
+For the iOS version check out [Crashios](https://github.com/namshi/crashios).
+
 
 
 ## App screenshots
